@@ -1,0 +1,14 @@
+chromium,librewolf
+cli tools
+rust,python,nodejs
+vscode
+zed?
+helix config
+zellij
+ffmpeg,ytdlp
+minecraft,
+split to server,lenovo,gram,etc.
+wallpaper
+zoom,slack
+push to github
+modularize
