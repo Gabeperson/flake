@@ -12,6 +12,7 @@ in {
     {
       boot.loader.efi.efiSysMountPoint = "/boot";
       boot.loader.efi.canTouchEfiVariables = true;
+      boot.loader.timeout = 30;
     }
     (lib.mkIf (cfg.bootloader == "systemd-boot") {
       boot.loader.systemd-boot.enable = true;

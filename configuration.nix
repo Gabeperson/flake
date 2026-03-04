@@ -63,23 +63,23 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = [pkgs.fcitx5-hangul];
-  }
-
-  # # Enable the X11 windowing system.
-  # # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
+    fcitx5.settings.inputMethod = {
+      "Hotkey/TriggerKeys/0" = "Alt+Alt_R";
+    };
+  };
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # # Configure keymap in X11
+  # services.xserver.xkb = {
+  #   layout = "us";
+  #   variant = "";
+  # };
 
   # services.xserver.excludePackages = [
   #   pkgs.xterm
@@ -122,7 +122,7 @@
   programs.firefox.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -137,11 +137,9 @@
   ];
 
   environment.variables = {
-    EDITOR = "hx";
-    VISUAL = "hx";
-    QT_QPA_PLATFORM=wayland;
+    QT_QPA_PLATFORM="wayland";
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1"
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix = {
     settings.auto-optimise-store = true;

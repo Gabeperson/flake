@@ -21,6 +21,7 @@
       kwinrc.TabBox.DelayTime = 5;
       kwinrc.Effect-blur.BlueStrength = 9;
       kwinrc.Plugins.blurEnabled = true;
+      kwinrc.Wayland."InputMethod[$e]" = "/run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop";
 
       plasmaparc.General.AudioFeedback = false;
     };

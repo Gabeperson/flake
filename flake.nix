@@ -46,17 +46,5 @@
           ];
         };
       };
-      # homeManagerConfig = {
-      #   gh-lenovo = home-manager.lib.homeManagerConfiguration {
-      #     inherit system pkgs;         
-      #     username = user;
-      #     homeDirectory = "/home/${user}";
-      #     configuration = {
-      #       imports = [
-              
-      #       ];
-      #     };
-      #   };
-      # };
     };
 }
