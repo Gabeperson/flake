@@ -11,7 +11,7 @@ let
     Status = "locked";
   };
 in {
-  options.features.features = {
+  options.features.firefox = {
     enable = lib.mkEnableOption "Firefox";
   };
 
@@ -57,6 +57,10 @@ in {
           # Dark Reader
           "addon@darkreader.org" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+            installation_mode = "normal_installed";
+          }
+          "sponsorBlocker@ajay.app" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
             installation_mode = "normal_installed";
           }
         };

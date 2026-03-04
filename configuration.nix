@@ -139,7 +139,9 @@
   environment.variables = {
     EDITOR = "hx";
     VISUAL = "hx";
+    QT_QPA_PLATFORM=wayland;
   };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"
 
   nix = {
     settings.auto-optimise-store = true;
