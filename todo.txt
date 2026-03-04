@@ -1,3 +1,7 @@
+bashrc
+common,sound,networking - tailscale
+secrets - sops nix?
+direnv - direnv nixos
 chromium,librewolf
 cli tools
 rust,python,nodejs
