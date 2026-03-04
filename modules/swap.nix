@@ -16,6 +16,6 @@ in {
     swapDevices = [{
       device = "/swapfile";    
       size = cfg.size;
-    }]
+    }];
   };
 }

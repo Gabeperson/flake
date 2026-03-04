@@ -40,7 +40,9 @@
               home-manager.useUserPackages = true;
               home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
               home-manager.users.${user} = {
-                imports = [ ./home.nix ];
+                home.username = user;  
+                home.homeDirectory = "/home/${user}";
+                home.stateVersion = "25.11";
               };
             }
           ];

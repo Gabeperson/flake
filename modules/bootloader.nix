@@ -5,7 +5,6 @@ let
 in {
   options.features.bootloader = lib.mkOption {
     type = lib.types.enum [ "systemd-boot" "grub" ];
-    default = "systemd-boot";
     description = "Which bootloader to use";
   };
   config = lib.mkMerge [

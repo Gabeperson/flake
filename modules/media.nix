@@ -13,5 +13,5 @@ in {
       yt-dlp
       ffmpeg-full
     ];
-  }
+  };
 }

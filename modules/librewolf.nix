@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, user, ... }:
 
 let
   cfg = config.features.librewolf;
@@ -44,7 +44,7 @@ in {
           };
   
           Preferences = { 
-            "browser.startup.page" = { Value = 3; Status = "locked" }
+            "browser.startup.page" = { Value = 3; Status = "locked"; };
             "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
             "browser.cache.disk.enable" = { Value = false; Status = "locked"; };
             "widget.disable-workspace-management" = { Value = true; Status = "locked"; };

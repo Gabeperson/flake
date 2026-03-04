@@ -20,5 +20,5 @@ in {
       kondo
       wget
     ];
-  }
+  };
 }

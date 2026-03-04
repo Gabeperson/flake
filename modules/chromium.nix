@@ -35,5 +35,5 @@ in {
         "CloudPrintSubmitEnabled" = false;
       };
     };
-  }
+  };
 }
