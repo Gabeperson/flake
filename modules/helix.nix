@@ -17,8 +17,8 @@ in {
       };
       programs.helix = {
         enable = true;
-        extraPackages = [ pkgs.uwu_colors pkgs.biome pkgs.nil pkgs.ruff ];
-        dfeaultEditor = true;
+        extraPackages = [ pkgs.uwu-colors pkgs.biome pkgs.nil pkgs.ruff ];
+        defaultEditor = true;
         settings = {
           theme = "nightfoxt";
           editor = {
@@ -33,54 +33,52 @@ in {
             "C-backspace" = "delete_word_backward";
           };
         };
-        languages = [
-          {
-            language-server = {
-              uwu-colors = {
-                command = "uwu_colors";
-              };
-              rust-analyzer.config = {
-                check = {
-                  command = "clippy";
-                };
-              };
-              biome = {
-                command = "biome";
-                args = ["lsp-proxy"];
+        languages = {
+          language-server = {
+            uwu-colors = {
+              command = "uwu_colors";
+            };
+            rust-analyzer.config = {
+              check = {
+                command = "clippy";
               };
             };
-            language = [
-              {
-                name = "rust";
-                auto-format = true;
-                language-servers = [ "rust-analyzer" "uwu-colors" ];
-              }
-              {
-                name = "nix";
-                language-servers = [ "nil" "uwu-colors" ];
-              }
-            ] ++ (lib.lists.forEach ["javascript" "typescript" "tsx" "jsx"]
-              (name: {
-                inherit name;
-                auto-format = true;
-                language-servers = [
-                  {
-                    name = "typescript-language-server";
-                    except-features = [ "format" ];
-                  }
-                  "biome"
-                  "uwu-colors"
-                ]
-              })
-            ) ++ (lib.lists.forEach ["css" "html" "json"]
-              (name: {
-                inherit name;
-                auto-format = true;
-                language-servers = [ "biome" "uwu-colors" ]
-              })
-            )
-          }
-        ];
+            biome = {
+              command = "biome";
+              args = ["lsp-proxy"];
+            };
+          };
+          language = [
+            {
+              name = "rust";
+              auto-format = true;
+              language-servers = [ "rust-analyzer" "uwu-colors" ];
+            }
+            {
+              name = "nix";
+              language-servers = [ "nil" "uwu-colors" ];
+            }
+          ] ++ (lib.lists.forEach ["javascript" "typescript" "tsx" "jsx"]
+            (name: {
+              inherit name;
+              auto-format = true;
+              language-servers = [
+                {
+                  name = "typescript-language-server";
+                  except-features = [ "format" ];
+                }
+                "biome"
+                "uwu-colors"
+              ];
+            })
+          ) ++ (lib.lists.forEach ["css" "html" "json"]
+            (name: {
+              inherit name;
+              auto-format = true;
+              language-servers = [ "biome" "uwu-colors" ];
+            })
+          );
+        };
       };
     };
   };

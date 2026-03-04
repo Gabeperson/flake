@@ -9,6 +9,8 @@
       ./modules/chromium.nix
       ./modules/cli-tools.nix
       ./modules/fcitx.nix
+      ./modules/firefox.nix
+      ./modules/helix.nix
       ./modules/librewolf.nix
       ./modules/media.nix
       ./modules/nvidia.nix
@@ -23,6 +25,8 @@
   features.chromium.enable = true;
   features.cli-tools.enable = true;
   features.fcitx.enable = true;
+  features.firefox.enable = true;
+  features.helix.enable = true;
   features.librewolf.enable = true;
   features.media.enable = true;
   features.nvidia.enable = true;
@@ -49,6 +53,7 @@
     LC_TELEPHONE = "en_CA.UTF-8";
     LC_TIME = "en_CA.UTF-8";
   };
+
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;

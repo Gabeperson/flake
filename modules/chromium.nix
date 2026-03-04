@@ -8,6 +8,8 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [ pkgs.chromium ];
+
     programs.chromium = {
       enable = true;
       # homepageLocation = "";

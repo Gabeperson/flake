@@ -66,7 +66,7 @@ in {
         };
   
         Preferences = { 
-          "browser.startup.page" = { Value = 3; Status = "locked" }
+          "browser.startup.page" = { Value = 3; Status = "locked"; };
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
           "extensions.pocket.enabled" = lock-false;
           "extensions.screenshots.disabled" = lock-true;

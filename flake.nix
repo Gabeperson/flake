@@ -19,10 +19,10 @@
     let
       user = "gabeperson";
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      # pkgs = import nixpkgs {
+      #   inherit system;
+      #   config.allowUnfree = true;
+      # };
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
@@ -44,6 +44,7 @@
                 home.homeDirectory = "/home/${user}";
                 home.stateVersion = "25.11";
               };
+              home-manager.backupFileExtension = "hmbackup";
             }
           ];
         };
