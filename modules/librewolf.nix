@@ -44,6 +44,7 @@ in {
           };
   
           Preferences = { 
+            "ui.key.menuAccessKeyFocuses" = false;
             "browser.startup.page" = { Value = 3; Status = "locked"; };
             "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
             "browser.cache.disk.enable" = { Value = false; Status = "locked"; };

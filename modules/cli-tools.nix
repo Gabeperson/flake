@@ -19,7 +19,6 @@ in {
       fd
       kondo
       wget
-      zellij
     ];
   };
 }

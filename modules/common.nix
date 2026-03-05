@@ -1,4 +1,4 @@
-{user, ...}:
+{pkgs, user, ...}:
 {
   time.timeZone = "America/Vancouver";
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -12,6 +12,19 @@
     LC_PAPER = "en_CA.UTF-8";
     LC_TELEPHONE = "en_CA.UTF-8";
     LC_TIME = "en_CA.UTF-8";
+  };
+
+  fonts.packages = [
+    pkgs.noto-fonts-cjk-sans
+    pkgs.nerd-fonts.fira-code
+  ];
+
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      sansSerif = [ "Noto Sans" ];
+      monospace = [ "FiraCode Nerd Font" ];
+    };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

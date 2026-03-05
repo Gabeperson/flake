@@ -17,11 +17,16 @@
   features.librewolf.enable = true;
   features.media.enable = true;
   features.nvidia.enable = true;
-  features.plasma.enable = true;
+  features.plasma.enable = false;
   features.printing.enable = true;
   features.swap.enable = true;
   features.sound.enable = true;
   features.networking.enable = true;
   features.networking.tailscale.enable = true;
   features.vesktop.enable = true;
+  features.zellij.enable = true;
+  features.java.enable = true;
+  features.minecraft.enable = true;
+  features.fish.enable = true;
+  features.gnome.enable = true;
 }

@@ -35,6 +35,8 @@ in {
         "SpellcheckEnabled" = true;
         "SpellcheckLanguage" = [ "en-CA" "ko-KR" ];
         "CloudPrintSubmitEnabled" = false;
+        "BrowserCheckDefaultBrowser" = false;
+        "BrowserCheckDefaultBrowserEnabled" = false;
       };
     };
   };

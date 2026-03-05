@@ -20,5 +20,9 @@
     ./common.nix
     ./ssh.nix
     ./vesktop.nix
+    ./zellij.nix
+    ./java.nix
+    ./minecraft.nix
+    ./fish.nix
   ];
 }

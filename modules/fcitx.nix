@@ -13,7 +13,11 @@ in {
       fcitx5.addons = [pkgs.fcitx5-hangul];
       fcitx5.settings.globalOptions = {
         "Hotkey/TriggerKeys" = {
-          "0" = "Alt+Alt_R"; 
+          "0" = "Alt_R"; 
+        };
+
+        "Hotkey/AltTriggerKeys" = {
+          "0" = "Alt_R";
         };
       };
       fcitx5.settings.inputMethod = {

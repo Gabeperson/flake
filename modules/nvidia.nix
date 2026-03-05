@@ -21,6 +21,11 @@ in {
 
   config = lib.mkIf cfg.enable {
     hardware.graphics.enable = true;
+    hardware.graphics = {
+      extraPackages = [
+        pkgs.nvidia-vaapi-driver
+      ];
+    };
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia.open = false;
     hardware.nvidia.prime = {

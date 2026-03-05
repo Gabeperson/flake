@@ -55,8 +55,15 @@ in {
             name = "Hazel";
             font = {
               # name = "Hack";
+              name = "FiraCode Nerd Font";
               size = 12;
             };
+          };
+        };
+        extraConfig = {
+          # MenuBar = "Disabled";
+          MainWindow = {
+            MenuBar = "Disabled";
           };
         };
       };

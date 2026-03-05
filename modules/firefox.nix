@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, user, ... }:
 
 let
   cfg = config.features.firefox;
@@ -16,9 +16,28 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+
+    home-manager.users.${user} = {
+      xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "text/html" = "firefox.desktop";
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
+          "x-scheme-handler/about" = "firefox.desktop";
+          "x-scheme-handler/unknown" = "firefox.desktop";
+        };
+      };
+    };
+    
+    environment.sessionVariables = {
+      MOZ_ENABLE_WAYLAND = "1";
+      LIBVA_DRIVER_NAME = if config.features.nvidia.enable then "nvidia" else "iHD";
+    };
     programs.firefox = {
       enable = true;
       languagePacks = ["en-CA"];
+
 
       policies = {
         DisableTelemetry = true;
@@ -69,6 +88,7 @@ in {
         };
   
         Preferences = { 
+          "ui.key.menuAccessKeyFocuses" = false;
           "browser.startup.page" = { Value = 3; Status = "locked"; };
           "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
           "extensions.pocket.enabled" = lock-false;
