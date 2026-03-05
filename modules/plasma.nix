@@ -21,6 +21,7 @@ in {
         NIXOS_OZONE_WL = "1";
       };
     };
+    
     home-manager.users.${user} = {
       programs.plasma = {
         enable = true;

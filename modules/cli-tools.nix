@@ -8,17 +8,18 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    programs.git.enable = true;
+    programs.zoxide.enable = true;
     environment.systemPackages = with pkgs; [
-      git
       steam-run
       dust
       ripgrep
       just
-      zoxide
       hexyl
       fd
       kondo
       wget
+      zellij
     ];
   };
 }
