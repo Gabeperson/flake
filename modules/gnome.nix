@@ -9,5 +9,8 @@ in {
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
     services.gnome.games.enable = false;
+    environment.systemPackages = [
+      pkgs.gnomeExtensions.blur-my-shell
+    ];
   };
 }

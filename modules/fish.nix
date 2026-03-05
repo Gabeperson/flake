@@ -25,7 +25,7 @@ in {
           set fish_greeting # Disable greeting
         '';
         plugins = [
-          # { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+          { name = "tide"; src = pkgs.fishPlugins.tide.src; }
           { name = "done"; src = pkgs.fishPlugins.done.src; }
           { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
         ];

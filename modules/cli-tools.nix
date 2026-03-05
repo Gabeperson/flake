@@ -19,6 +19,7 @@ in {
       fd
       kondo
       wget
+      gh
     ];
   };
 }

@@ -24,5 +24,6 @@
     ./java.nix
     ./minecraft.nix
     ./fish.nix
+    ./gnome.nix
   ];
 }
