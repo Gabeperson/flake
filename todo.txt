@@ -1,11 +1,6 @@
-yazi
-fish
-bashrc
 secrets - sops nix?
 direnv - direnv nixos
 rust,python,nodejs
 vscode
-zed?
 split to server,lenovo,gram,etc.
 wallpaper
-zoom,slack

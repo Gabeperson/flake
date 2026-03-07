@@ -10,6 +10,7 @@ in {
   config = lib.mkIf cfg.enable {
     programs.git.enable = true;
     programs.zoxide.enable = true;
+    programs.yazi.enable = true;
     environment.systemPackages = with pkgs; [
       steam-run
       dust

@@ -29,4 +29,34 @@
   features.minecraft.enable = true;
   features.fish.enable = true;
   features.gnome.enable = true;
+  features.rust.enable = true;
+  features.flameshot.enable = true;
+
+  features.niri.enable = true;
+  features.ashell.enable = true;
+  features.vicinae.enable = true;
+  features.hyprlock.enable = true;
+  features.hypridle.enable = true;
+  features.wezterm.enable = true;
+
+  features.slack.enable = true;
+  features.zoom.enable = true;
+
+  # https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/issues/903#note_2619256
+  systemd.services.nvidia-suspend = {
+    serviceConfig = {
+      ExecStart = [ "" ''/run/current-system/sw/bin/bash -c 'echo "suspend" > /proc/driver/nvidia/suspend' '' ];
+    };
+    unitConfig = {
+      ConditionPathExists="/proc/driver/nvidia/suspend";
+    };
+  };
+  systemd.services.nvidia-resume = {
+    serviceConfig = {
+      ExecStart = [ "" ''/run/current-system/sw/bin/bash -c 'echo "resume" > /proc/driver/nvidia/suspend' ''];
+    };
+    unitConfig = {
+      ConditionPathExists="/proc/driver/nvidia/suspend";
+    };
+  };
 }

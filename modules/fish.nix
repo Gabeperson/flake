@@ -26,7 +26,7 @@ in {
         '';
         plugins = [
           { name = "tide"; src = pkgs.fishPlugins.tide.src; }
-          { name = "done"; src = pkgs.fishPlugins.done.src; }
+          # { name = "done"; src = pkgs.fishPlugins.done.src; }
           { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
         ];
       };

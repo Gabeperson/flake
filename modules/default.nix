@@ -25,5 +25,17 @@
     ./minecraft.nix
     ./fish.nix
     ./gnome.nix
+    ./rust.nix
+    ./flameshot.nix
+
+    ./niri.nix
+    ./ashell.nix
+    ./vicinae.nix
+    ./hyprlock.nix
+    ./hypridle.nix
+
+    ./zoom.nix
+    ./slack.nix
+
   ];
 }
