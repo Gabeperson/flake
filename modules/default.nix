@@ -33,6 +33,7 @@
     ./vicinae.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./wezterm.nix
 
     ./zoom.nix
     ./slack.nix
