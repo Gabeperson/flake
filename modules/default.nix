@@ -27,6 +27,7 @@
     ./gnome.nix
     ./rust.nix
     ./flameshot.nix
+    ./eyedropper.nix
 
     ./niri.nix
     ./ashell.nix

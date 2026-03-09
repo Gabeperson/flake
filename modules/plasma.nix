@@ -44,7 +44,7 @@ in {
         });
       };
       home.file.".local/share/konsole/hazel.colorscheme" = {
-        source = ../data/hazel.colorscheme;
+        source = ../config/hazel.colorscheme;
       };
       programs.konsole = {
         enable = true;

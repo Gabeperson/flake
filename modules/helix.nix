@@ -13,7 +13,7 @@ in {
 
     home-manager.users.${user} = {
       home.file.".config/helix/themes/nightfoxt.toml" = {
-        source = ../data/nightfoxt.toml;
+        source = ../config/nightfoxt.toml;
       };
       programs.helix = {
         enable = true;

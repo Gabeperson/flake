@@ -31,6 +31,7 @@
   features.gnome.enable = true;
   features.rust.enable = true;
   features.flameshot.enable = true;
+  features.eyedropper.enable = true;
 
   features.niri.enable = true;
   features.ashell.enable = true;
