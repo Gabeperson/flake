@@ -14,18 +14,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    awww.url = "git+https://codeberg.org/LGFae/awww";
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager }:
+  outputs = inputs @ { self, nixpkgs, home-manager, plasma-manager, ... }:
     let
       user = "gabeperson";
-      system = "x86_64-linux";
+      # system = "x86_64-linux";
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
         gh-lenovo = lib.nixosSystem rec {
-          inherit system;
+          # inherit system;
           specialArgs = {
+            inherit inputs;
             inherit user;
             host = "gh-lenovo";
           };

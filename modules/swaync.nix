@@ -1,21 +1,21 @@
 { config, pkgs, lib, user, ... }:
 let
-  cfg = config.features.ashell;
+  cfg = config.features.swaync;
 in {
-  options.features.ashell = {
-    enable = lib.mkEnableOption "ashell bar"; 
+  options.features.swaync = {
+    enable = lib.mkEnableOption "Swaync"; 
   };
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.ashell
+      pkgs.swaynotificationcenter
     ];
     home-manager.users.${user} = {
-      programs.ashell = {
+      services.swaync = {
         enable = true;
-        systemd.enable = true;
       };
     };
   };
 }
+
 

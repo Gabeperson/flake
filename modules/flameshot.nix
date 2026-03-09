@@ -21,10 +21,14 @@ in
             useGrimAdapter = true;
             # Stops warnings for using Grim
             disabledGrimWarning = true;
+            disabledTrayIcon = true;
+            showDesktopNotification = false;
+            showAbortNotification = false;
+            showHelp = false;
           };
         };
       };
-      dconf.settings = lib.mkIf config.features.gnome.enabled {
+      dconf.settings = lib.mkIf config.features.gnome.enable {
         # Disable old screenshot
         "org/gnome/shell/keybindings" = {
           show-screenshot-ui = [ ];

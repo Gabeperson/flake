@@ -1,3 +1,4 @@
+eyedropper
 secrets - sops nix?
 direnv - direnv nixos
 rust,python,nodejs

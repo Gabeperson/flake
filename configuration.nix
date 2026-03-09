@@ -38,25 +38,34 @@
   features.hyprlock.enable = true;
   features.hypridle.enable = true;
   features.wezterm.enable = true;
+  features.awww.enable = true;
+  features.swaync.enable = true;
+  features.wl-clipboard.enable = true;
 
   features.slack.enable = true;
   features.zoom.enable = true;
 
+  # Digicert root CA for Uni wifi
+  environment.etc."custom-certs/DigiCert.crt" = {
+    source = ./certs/DigiCertGlobalRootCA.crt;
+  };
+
+
   # https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/issues/903#note_2619256
-  systemd.services.nvidia-suspend = {
-    serviceConfig = {
-      ExecStart = [ "" ''/run/current-system/sw/bin/bash -c 'echo "suspend" > /proc/driver/nvidia/suspend' '' ];
-    };
-    unitConfig = {
-      ConditionPathExists="/proc/driver/nvidia/suspend";
-    };
-  };
-  systemd.services.nvidia-resume = {
-    serviceConfig = {
-      ExecStart = [ "" ''/run/current-system/sw/bin/bash -c 'echo "resume" > /proc/driver/nvidia/suspend' ''];
-    };
-    unitConfig = {
-      ConditionPathExists="/proc/driver/nvidia/suspend";
-    };
-  };
+  # systemd.services.nvidia-suspend = {
+  #   serviceConfig = {
+  #     ExecStart = [ "" ''/run/current-system/sw/bin/bash -c 'echo "suspend" > /proc/driver/nvidia/suspend' '' ];
+  #   };
+  #   unitConfig = {
+  #     ConditionPathExists="/proc/driver/nvidia/suspend";
+  #   };
+  # };
+  # systemd.services.nvidia-resume = {
+  #   serviceConfig = {
+  #     ExecStart = [ "" ''/run/current-system/sw/bin/bash -c 'echo "resume" > /proc/driver/nvidia/suspend' ''];
+  #   };
+  #   unitConfig = {
+  #     ConditionPathExists="/proc/driver/nvidia/suspend";
+  #   };
+  # };
 }

@@ -34,6 +34,9 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./wezterm.nix
+    ./awww.nix
+    ./swaync.nix
+    ./wl-clipboard.nix
 
     ./zoom.nix
     ./slack.nix

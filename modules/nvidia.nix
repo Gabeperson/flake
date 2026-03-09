@@ -20,6 +20,11 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    systemd.services."systemd-suspend" = {
+      serviceConfig = {
+        Environment = ''"SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"'';
+      };
+    };
     hardware.graphics.enable = true;
     hardware.graphics = {
       extraPackages = [

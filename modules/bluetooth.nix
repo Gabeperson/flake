@@ -8,6 +8,9 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.bluetui
+    ];
     hardware.bluetooth.enable = true;
     hardware.bluetooth.settings = {
       General = {

@@ -30,6 +30,8 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
+  services.gnome.gnome-keyring.enable = true;
+
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];

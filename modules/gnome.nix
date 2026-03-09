@@ -42,7 +42,7 @@ in {
         "org/gnome/shell" = {
           enabled-extensions = [
             pkgs.gnomeExtensions.blur-my-shell.extensionUuid
-            pkgs.gnomeExtensions.wallpaper-slideshow.extensionUuid
+            # pkgs.gnomeExtensions.wallpaper-slideshow.extensionUuid
             # pkgs.gnomeExtensions.dash-to-panel.extensionUuid
             # pkgs.gnomeExtensions.arcmenu.extensionUuid
           ];

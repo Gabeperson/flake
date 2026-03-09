@@ -12,7 +12,10 @@ in {
       pkgs.vicinae
     ];
     home-manager.users.${user} = {
-      enable = true;
+      programs.vicinae = {
+        enable = true;
+        systemd.enable = true;
+      };
     };
   };
 }

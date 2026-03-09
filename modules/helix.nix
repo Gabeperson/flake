@@ -8,7 +8,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.helix pkgs.wl-clipboard ];
+    environment.systemPackages = [ pkgs.helix ];
 
 
     home-manager.users.${user} = {
