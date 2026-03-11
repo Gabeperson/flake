@@ -21,6 +21,7 @@ in {
       kondo
       wget
       gh
+      pkgs.p7zip
     ];
   };
 }

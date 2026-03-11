@@ -18,7 +18,7 @@ in {
         # uBlock Origin (Full)
         "cjpalhdlnbpafiamejdnhcphjbkeiagm"
         # uBlock Origin (lite)
-        "ddkjiahejlhfcafbddmgiahcphecmpfh"
+        # "ddkjiahejlhfcafbddmgiahcphecmpfh"
         # Dark Reader
         "eimadpbcbfnmbkopoojfekhnkhdbieeh"
         # Bitwarden

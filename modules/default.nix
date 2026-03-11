@@ -28,6 +28,8 @@
     ./rust.nix
     ./flameshot.nix
     ./eyedropper.nix
+    ./firejail.nix
+    ./nix-ld.nix
 
     ./niri.nix
     ./ashell.nix
