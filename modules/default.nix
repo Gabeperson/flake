@@ -30,6 +30,7 @@
     ./eyedropper.nix
     ./firejail.nix
     ./nix-ld.nix
+    ./vm.nix
 
     ./niri.nix
     ./ashell.nix

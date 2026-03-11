@@ -33,6 +33,7 @@
   features.flameshot.enable = true;
   features.eyedropper.enable = true;
   features.firejail.enable = true;
+  features.vm.enable = true;
 
   features.niri.enable = true;
   features.ashell.enable = true;
