@@ -1,8 +1,15 @@
-{ config, lib, pkgs, user, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  user,
+  ...
+}:
 
 let
   cfg = config.features.helix;
-in {
+in
+{
   options.features.helix = {
     enable = lib.mkEnableOption "Helix Editor";
   };
@@ -10,19 +17,27 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ pkgs.helix ];
 
-
     home-manager.users.${user} = {
       home.file.".config/helix/themes/nightfoxt.toml" = {
         source = ../config/nightfoxt.toml;
       };
       programs.helix = {
         enable = true;
-        extraPackages = [ pkgs.uwu-colors pkgs.biome pkgs.nil pkgs.ruff ];
+        extraPackages = [
+          pkgs.uwu-colors
+          pkgs.biome
+          pkgs.nil
+          pkgs.ruff
+          pkgs.lua-language-server
+        ];
         defaultEditor = true;
         settings = {
           theme = "nightfoxt";
           editor = {
             end-of-line-diagnostics = "hint";
+            lsp = {
+              display-inlay-hints = true;
+            };
             true-color = true;
             line-number = "relative";
             inline-diagnostics = {
@@ -45,42 +60,48 @@ in {
             };
             biome = {
               command = "biome";
-              args = ["lsp-proxy"];
+              args = [ "lsp-proxy" ];
             };
           };
           language = [
             {
               name = "rust";
               auto-format = true;
-              language-servers = [ "rust-analyzer" "uwu-colors" ];
+              language-servers = [
+                "rust-analyzer"
+                "uwu-colors"
+              ];
             }
             {
               name = "nix";
-              language-servers = [ "nil" "uwu-colors" ];
-            }
-          ] ++ (lib.lists.forEach ["javascript" "typescript" "tsx" "jsx"]
-            (name: {
-              inherit name;
-              auto-format = true;
               language-servers = [
-                {
-                  name = "typescript-language-server";
-                  except-features = [ "format" ];
-                }
-                "biome"
+                "nil"
                 "uwu-colors"
               ];
-            })
-          ) ++ (lib.lists.forEach ["css" "html" "json"]
-            (name: {
-              inherit name;
-              auto-format = true;
-              language-servers = [ "biome" "uwu-colors" ];
-            })
-          );
+            }
+          ]
+          ++ (lib.lists.forEach [ "javascript" "typescript" "tsx" "jsx" ] (name: {
+            inherit name;
+            auto-format = true;
+            language-servers = [
+              {
+                name = "typescript-language-server";
+                except-features = [ "format" ];
+              }
+              "biome"
+              "uwu-colors"
+            ];
+          }))
+          ++ (lib.lists.forEach [ "css" "html" "json" ] (name: {
+            inherit name;
+            auto-format = true;
+            language-servers = [
+              "biome"
+              "uwu-colors"
+            ];
+          }));
         };
       };
     };
   };
 }
-

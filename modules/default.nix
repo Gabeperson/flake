@@ -31,6 +31,7 @@
     ./firejail.nix
     ./nix-ld.nix
     ./vm.nix
+    ./steam.nix
 
     ./niri.nix
     ./ashell.nix
