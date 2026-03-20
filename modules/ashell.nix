@@ -43,12 +43,12 @@ in
           };
           system_info = {
             indicators = [
-              "DownloadSpeed"
-              "UploadSpeed"
-              "IpAddress"
               "Cpu"
               "Memory"
               "Temperature"
+              "DownloadSpeed"
+              "UploadSpeed"
+              "IpAddress"
             ];
             cpu = {
               warn_threshold = 60;
