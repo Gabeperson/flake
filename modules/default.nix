@@ -32,6 +32,7 @@
     ./nix-ld.nix
     ./vm.nix
     ./steam.nix
+    ./vscode.nix
 
     ./niri.nix
     ./ashell.nix
