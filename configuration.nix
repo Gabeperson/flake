@@ -35,6 +35,7 @@
   features.firejail.enable = true;
   features.vm.enable = true;
   features.steam.enable = true;
+  features.vscode.enable = true;
 
   features.niri.enable = true;
   features.ashell.enable = true;
