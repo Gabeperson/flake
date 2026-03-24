@@ -32,7 +32,8 @@ in
           ms-python.python
           rust-lang.rust-analyzer
           biomejs.biome
-          ms-vscode.cpptools-extension-pack
+          ms-vscode.cpptools
+          ms-vscode.cpp-devtools
           tomoki1207.pdf
         ];
       };
