@@ -43,12 +43,13 @@
   features.hyprlock.enable = true;
   features.hypridle.enable = true;
   features.wezterm.enable = true;
-  features.awww.enable = true;
+  # features.awww.enable = true;
   features.swaync.enable = true;
   features.wl-clipboard.enable = true;
 
   features.slack.enable = true;
   features.zoom.enable = true;
+
 
   # Digicert root CA for Uni wifi
   environment.etc."custom-certs/DigiCert.crt" = {

@@ -7,6 +7,9 @@ in {
     enable = lib.mkEnableOption "Sound";
   };
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.playerctl
+    ];
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {

@@ -21,7 +21,9 @@ in {
       kondo
       wget
       gh
-      pkgs.p7zip
+      p7zip
+      gnumake
+      valgrind
     ];
   };
 }
