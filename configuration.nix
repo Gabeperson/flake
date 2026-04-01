@@ -56,6 +56,10 @@
     source = ./certs/DigiCertGlobalRootCA.crt;
   };
 
+  # boot.kernelParams = [
+  #   "pcie_aspm=off"
+  #   "nvme_core.default_ps_max_latency_us=0"
+  # ];
 
   # https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/issues/903#note_2619256
   # systemd.services.nvidia-suspend = {
