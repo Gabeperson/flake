@@ -24,6 +24,7 @@ in {
       p7zip
       gnumake
       valgrind
+      htop
     ];
   };
 }

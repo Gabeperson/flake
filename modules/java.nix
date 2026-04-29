@@ -9,7 +9,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
-      pkgs.jdk 
+      pkgs.jdk25_headless
     ];
   };
 }

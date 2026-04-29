@@ -24,11 +24,11 @@ in
         settings = {
           modules = {
             left = [
-              "Workspaces"
+              # "Workspaces"
               "Privacy"
             ];
             center = [
-              "WindowTitle"
+              # "WindowTitle"
               "MediaPlayer"
             ];
             right = [

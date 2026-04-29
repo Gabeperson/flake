@@ -69,6 +69,12 @@ in {
             installation_mode = "normal_installed";
             default_area = "navbar";
           };
+          # Indie wiki buddy:
+          "{cb31ec5d-c49a-4e5a-b240-16c767444f62}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/indie_wiki_buddy/latest.xpi";
+            installation_mode = "normal_installed";
+            default_area = "navbar";
+          };
           # Bitwarden
           "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";

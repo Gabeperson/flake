@@ -34,6 +34,7 @@ in {
     hardware.nvidia.powerManagement.enable = true;
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia.open = false;
+    hardware.nvidia.modesetting.enable = true;
     hardware.nvidia.prime = {
       inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
       reverseSync.enable = true;

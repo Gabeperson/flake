@@ -36,6 +36,7 @@
   features.vm.enable = true;
   features.steam.enable = true;
   features.vscode.enable = true;
+  features.foot.enable = true;
 
   features.niri.enable = true;
   features.ashell.enable = true;
@@ -54,6 +55,29 @@
   # Digicert root CA for Uni wifi
   environment.etc."custom-certs/DigiCert.crt" = {
     source = ./certs/DigiCertGlobalRootCA.crt;
+  };
+
+  environment.systemPackages = [
+    pkgs.libreoffice
+  ];
+
+  programs.obs-studio = {
+    enable = true;
+
+    # optional Nvidia hardware acceleration
+    package = (
+      pkgs.obs-studio.override {
+        cudaSupport = true;
+      }
+    );
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      obs-gstreamer
+      obs-vkcapture
+    ];
   };
 
   # boot.kernelParams = [

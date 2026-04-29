@@ -33,6 +33,7 @@
     ./vm.nix
     ./steam.nix
     ./vscode.nix
+    ./foot.nix
 
     ./niri.nix
     ./ashell.nix
