@@ -14,7 +14,7 @@
   features.fcitx.enable = true;
   features.firefox.enable = true;
   features.helix.enable = true;
-  features.librewolf.enable = true;
+  features.librewolf.enable = false;
   features.media.enable = true;
   features.nvidia.enable = true;
   features.plasma.enable = false;
