@@ -37,6 +37,7 @@
   features.steam.enable = true;
   features.vscode.enable = true;
   features.foot.enable = true;
+  features.r2modman.enable = true;
 
   features.niri.enable = true;
   features.ashell.enable = true;
@@ -60,6 +61,8 @@
   environment.systemPackages = [
     pkgs.libreoffice
   ];
+
+  # boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   programs.obs-studio = {
     enable = true;

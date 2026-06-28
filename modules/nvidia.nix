@@ -7,11 +7,11 @@ in {
     enable = lib.mkEnableOption "Nvidia";
     intelBusId = lib.mkOption {
       type = lib.types.str;
-      default = "PCI:0@0:2:0";
+      default = "PCI:0:2:0";
     };
     nvidiaBusId = lib.mkOption {
       type = lib.types.str;
-      default = "PCI:1@0:0:0";
+      default = "PCI:1:0:0";
     };
     amdgpuBusId = lib.mkOption {
       type = lib.types.str;
@@ -33,11 +33,18 @@ in {
     };
     hardware.nvidia.powerManagement.enable = true;
     services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia.open = false;
-    hardware.nvidia.modesetting.enable = true;
-    hardware.nvidia.prime = {
-      inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
-      reverseSync.enable = true;
+
+    boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_580 ];
+    hardware.nvidia = {
+      open = false;
+      modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+      prime = {
+        inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
+        sync.enable = true;
+        offload.enable = false;
+        reverseSync.enable = false;
+      };
     };
   };
 }

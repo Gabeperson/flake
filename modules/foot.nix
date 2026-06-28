@@ -1,7 +1,13 @@
-{ config, lib, user, ... }:
+{
+  config,
+  lib,
+  user,
+  ...
+}:
 let
   cfg = config.features.foot;
-in {
+in
+{
   options.features.foot = {
     enable = lib.mkEnableOption "Foot";
   };
@@ -17,10 +23,12 @@ in {
           main = {
             font = "monospace:size=12";
           };
+          colors-dark = {
+            background = "000000";
+            alpha = "0.55";
+          };
         };
       };
     };
   };
 }
-
-

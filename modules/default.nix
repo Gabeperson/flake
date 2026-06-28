@@ -34,6 +34,7 @@
     ./steam.nix
     ./vscode.nix
     ./foot.nix
+    ./r2modman.nix
 
     ./niri.nix
     ./ashell.nix
