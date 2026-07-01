@@ -42,7 +42,10 @@ in {
       prime = {
         inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
         sync.enable = true;
-        offload.enable = false;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
         reverseSync.enable = false;
       };
     };
