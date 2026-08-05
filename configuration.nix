@@ -40,7 +40,8 @@
   features.r2modman.enable = true;
 
   features.niri.enable = true;
-  features.ashell.enable = true;
+  # features.ashell.enable = true;
+  features.noctalia.enable = true;
   features.vicinae.enable = true;
   features.hyprlock.enable = true;
   features.hypridle.enable = true;
