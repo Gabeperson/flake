@@ -46,6 +46,8 @@
     ./swaync.nix
     ./wl-clipboard.nix
 
+    ./gamedev.nix
+
     ./zoom.nix
     ./slack.nix
 

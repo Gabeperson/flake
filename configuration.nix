@@ -14,7 +14,7 @@
   features.fcitx.enable = true;
   features.firefox.enable = true;
   features.helix.enable = true;
-  features.librewolf.enable = false;
+  features.librewolf.enable = true;
   features.media.enable = true;
   features.nvidia.enable = true;
   features.plasma.enable = false;
@@ -48,6 +48,8 @@
   # features.awww.enable = true;
   features.swaync.enable = true;
   features.wl-clipboard.enable = true;
+
+  features.gamedev.enable = true;
 
   features.slack.enable = true;
   features.zoom.enable = true;

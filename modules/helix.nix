@@ -62,6 +62,13 @@ in
               command = "biome";
               args = [ "lsp-proxy" ];
             };
+            godot = {
+              command = "nc";
+              args = [
+                "127.0.0.1"
+                "6005"
+              ];
+            };
           };
           language = [
             {
@@ -76,6 +83,13 @@ in
               name = "nix";
               language-servers = [
                 "nil"
+                "uwu-colors"
+              ];
+            }
+            {
+              name = "gdscript";
+              language-servers = [
+                "godot"
                 "uwu-colors"
               ];
             }

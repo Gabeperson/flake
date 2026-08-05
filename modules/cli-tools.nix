@@ -25,6 +25,7 @@ in {
       gnumake
       valgrind
       htop
+      btop-cuda
     ];
   };
 }

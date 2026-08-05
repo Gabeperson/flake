@@ -41,7 +41,7 @@ in {
       package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
       prime = {
         inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
-        sync.enable = true;
+        # sync.enable = true;
         offload = {
           enable = true;
           enableOffloadCmd = true;
