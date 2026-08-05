@@ -41,7 +41,8 @@
 
   features.niri.enable = true;
   # features.ashell.enable = true;
-  features.noctalia.enable = true;
+  # features.noctalia.enable = true;
+  features.wayle.enable = true;
   features.vicinae.enable = true;
   features.hyprlock.enable = true;
   features.hypridle.enable = true;

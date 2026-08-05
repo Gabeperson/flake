@@ -39,6 +39,7 @@
     ./niri.nix
     ./ashell.nix
     ./noctalia.nix
+    ./wayle.nix
     ./vicinae.nix
     ./hyprlock.nix
     ./hypridle.nix

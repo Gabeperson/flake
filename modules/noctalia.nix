@@ -10,13 +10,13 @@ let
   cfg = config.features.noctalia;
 in
 {
-  options.features.ashell = {
+  options.features.noctalia = {
     enable = lib.mkEnableOption "Noctalia";
   };
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
-      inputs.noctalia.packages.${pkgs.stdev.hostPlatform.system}.default
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     home-manager.users.${user} = {
       imports = [
@@ -24,6 +24,12 @@ in
       ];
       programs.noctalia = {
         enable = true;
+        systemd.enable = true;
+        settings = {
+          shell = {
+            launch_apps_as_systemd_services = true;
+          };
+        };
       };
     };
   };
