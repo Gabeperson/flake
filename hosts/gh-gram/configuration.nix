@@ -66,6 +66,7 @@
     source = self + /certs/DigiCertGlobalRootCA.crt;
   };
 
+  # Fix ACPI spam issue(?) hopefully(?)
   boot.kernelParams = [
     "acpi_mask_gpe=0x6E"
   ];
