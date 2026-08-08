@@ -21,19 +21,31 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       # system = "x86_64-linux";
       inherit (nixpkgs) lib;
-      mkHost = {host, user ? "gabeperson" }:
+      mkHost =
+        {
+          host,
+          user ? "gabeperson",
+        }:
         lib.nixosSystem {
-          specialArgs = {inherit inputs host user;};
+          specialArgs = { inherit inputs self host user; };
           modules = [
+            inputs.home-manager.nixosModules.home-manager
             ./hosts/common.nix
             ./hosts/${host}/configuration.nix
           ];
         };
-    in {
+    in
+    {
       nixosConfigurations = {
         gh-lenovo = mkHost {
           host = "gh-lenovo";

@@ -1,10 +1,10 @@
 # { config, pkgs, user, host, ... }:
-{ ... }:
+{ self, ... }:
 {
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules
+      (self + /modules)
     ];
 
   features.bibata.enable = true;
@@ -63,7 +63,7 @@
 
   # Digicert root CA for Uni wifi
   environment.etc."custom-certs/DigiCert.crt" = {
-    source = ./certs/DigiCertGlobalRootCA.crt;
+    source = self + /certs/DigiCertGlobalRootCA.crt;
   };
 
   # boot.kernelParams = [
