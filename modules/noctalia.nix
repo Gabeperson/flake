@@ -26,6 +26,7 @@ in
         enable = true;
         systemd.enable = true;
         settings = {
+          osd.kinds.media = false;
           shell = {
             launch_apps_as_systemd_services = true;
           };

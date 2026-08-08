@@ -17,7 +17,7 @@
   features.helix.enable = true;
   features.librewolf.enable = true;
   features.media.enable = true;
-  features.nvidia.enable = true;
+  features.nvidia.enable = false;
   features.plasma.enable = false;
   features.printing.enable = true;
   features.swap.enable = true;
@@ -35,10 +35,10 @@
   features.eyedropper.enable = false;
   features.firejail.enable = false;
   features.vm.enable = false;
-  features.steam.enable = true;
+  features.steam.enable = false;
   features.vscode.enable = true;
   features.foot.enable = true;
-  features.r2modman.enable = true;
+  features.r2modman.enable = false;
 
   features.niri.enable = true;
   features.ashell.enable = false;
@@ -53,7 +53,7 @@
 
   features.wl-clipboard.enable = true;
 
-  features.gamedev.enable = true;
+  features.gamedev.enable = false;
 
   features.slack.enable = true;
   features.zoom.enable = true;
@@ -65,6 +65,10 @@
   environment.etc."custom-certs/DigiCert.crt" = {
     source = self + /certs/DigiCertGlobalRootCA.crt;
   };
+
+  boot.kernelParams = [
+    "acpi_mask_gpe=0x6E"
+  ];
 
   # boot.kernelParams = [
   #   "pcie_aspm=off"
