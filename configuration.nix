@@ -30,25 +30,26 @@
   features.fish.enable = true;
   features.gnome.enable = true;
   features.rust.enable = true;
-  features.flameshot.enable = true;
-  features.eyedropper.enable = true;
+  features.flameshot.enable = false;
+  features.eyedropper.enable = false;
   features.firejail.enable = true;
-  features.vm.enable = true;
+  features.vm.enable = false;
   features.steam.enable = true;
   features.vscode.enable = true;
   features.foot.enable = true;
   features.r2modman.enable = true;
 
   features.niri.enable = true;
-  # features.ashell.enable = true;
-  # features.noctalia.enable = true;
-  features.wayle.enable = true;
+  features.ashell.enable = false;
+  features.noctalia.enable = true;
+  features.wayle.enable = false;
   features.vicinae.enable = true;
-  features.hyprlock.enable = true;
-  features.hypridle.enable = true;
+  features.hyprlock.enable = false;
+  features.hypridle.enable = false;
   features.wezterm.enable = true;
-  # features.awww.enable = true;
+  features.awww.enable = false;
   features.swaync.enable = true;
+
   features.wl-clipboard.enable = true;
 
   features.gamedev.enable = true;

@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home-manager.users.${user} = {
-      programs.wayle = {
+      services.wayle = {
         enable = true;
         autoInstallDependencies = true;
         settings = {

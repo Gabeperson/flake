@@ -29,6 +29,34 @@ in
           shell = {
             launch_apps_as_systemd_services = true;
           };
+          widget.clock = {
+            format = "{:%a, %b %-d, %Y, %I:%M:%S %P}";
+          };
+          bar.default = {
+            margin_ends = 0;
+            concave_edge_corners = false;
+            start = [
+              "wallpaper"
+              "cpu"
+              "ram"
+              "temp"
+              "workspaces"
+            ];
+            center = [ "clock" ];
+            end = [
+              "media"
+              "tray"
+              "notifications"
+              "clipboard"
+              "network"
+              "bluetooth"
+              "volume"
+              "brightness"
+              "battery"
+              "control-center"
+              "session"
+            ];
+          };
         };
       };
     };
