@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Flake setup";
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -9,47 +9,34 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-    awww.url = "git+https://codeberg.org/LGFae/awww";
+    # plasma-manager = {
+    #   url = "github:nix-community/plasma-manager";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.home-manager.follows = "home-manager";
+    # };
+    # awww.url = "git+https://codeberg.org/LGFae/awww";
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, plasma-manager, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
-      user = "gabeperson";
       # system = "x86_64-linux";
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
+      mkHost = {host, user ? "gabeperson" }:
+        lib.nixosSystem {
+          specialArgs = {inherit inputs host user;};
+          modules = [
+            ./hosts/common.nix
+            ./hosts/${host}/configuration.nix
+          ];
+        };
     in {
       nixosConfigurations = {
-        gh-lenovo = lib.nixosSystem rec {
-          # inherit system;
-          specialArgs = {
-            inherit inputs;
-            inherit user;
-            host = "gh-lenovo";
-          };
-          modules = [
-            ./configuration.nix
-            home-manager.nixosModules.home-manager {
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              home-manager.users.${user} = {
-                home.username = user;  
-                home.homeDirectory = "/home/${user}";
-                home.stateVersion = "25.11";
-              };
-              home-manager.backupFileExtension = "hmbackup";
-            }
-          ];
+        gh-lenovo = mkHost {
+          host = "gh-lenovo";
         };
       };
     };

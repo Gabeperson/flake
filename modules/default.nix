@@ -52,6 +52,8 @@
 
     ./zoom.nix
     ./slack.nix
+    ./obs.nix
+    ./libreoffice.nix
 
   ];
 }

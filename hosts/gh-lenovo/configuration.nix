@@ -1,9 +1,10 @@
-{ config, pkgs, user, host, ... }:
+# { config, pkgs, user, host, ... }:
+{ ... }:
 {
   imports =
     [
       ./hardware-configuration.nix
-      ./modules
+      ../../modules
     ];
 
   features.bibata.enable = true;
@@ -56,36 +57,13 @@
 
   features.slack.enable = true;
   features.zoom.enable = true;
+  features.obs.enable = true;
+  features.libreoffice.enable = true;
 
 
   # Digicert root CA for Uni wifi
   environment.etc."custom-certs/DigiCert.crt" = {
     source = ./certs/DigiCertGlobalRootCA.crt;
-  };
-
-  environment.systemPackages = [
-    pkgs.libreoffice
-  ];
-
-  # boot.kernelPackages = pkgs.linuxPackages_6_12;
-
-  programs.obs-studio = {
-    enable = true;
-
-    # optional Nvidia hardware acceleration
-    package = (
-      pkgs.obs-studio.override {
-        cudaSupport = true;
-      }
-    );
-
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      obs-gstreamer
-      obs-vkcapture
-    ];
   };
 
   # boot.kernelParams = [
