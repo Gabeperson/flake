@@ -35,6 +35,7 @@
     ./vscode.nix
     ./foot.nix
     ./r2modman.nix
+    ./syncthing.nix
 
     ./niri.nix
     ./ashell.nix
