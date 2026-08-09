@@ -1,0 +1,15 @@
+output "eDP-1" alias $laptop
+output "Dell Inc. DELL U2419H FQLSSS2" alias $h_main
+
+profile undocked {
+	output $laptop enable
+}
+
+profile h-docked-single {
+	output $h_main enable position 0,0
+}
+
+profile h-docked-double {
+	output $laptop enable position 0,0
+	output $h_main enable position 1920,0
+}

@@ -51,6 +51,8 @@
   features.wezterm.enable = false;
   features.awww.enable = false;
   features.swaync.enable = false;
+  features.kanshi.enable = true;
+  
 
   features.wl-clipboard.enable = true;
 

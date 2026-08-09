@@ -204,11 +204,14 @@ layout {
         off
 
         width 4
-        active-color "#ffc87f"
+        // active-color "#ffc87f"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
+
+        active-gradient from="#ff8a8a" to="#ffc18e" angle=45 in="oklch longer hue"
+        
 
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
@@ -329,10 +332,18 @@ window-rule {
     background-effect {
         xray true
         blur true
-        noise 0.05
-        saturation 1.5
+        // noise 0.05
+        // saturation 1.5
+        saturation 0.8
     }
 }
+
+gestures {
+    hot-corners {
+        bottom-left
+    }
+}
+
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -357,8 +368,8 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 6
     clip-to-geometry true
 }
 
@@ -382,7 +393,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Open launcher" { spawn "vicinae" "toggle"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Super+Alt+L hotkey-overlay-title="Lock" { spawn "noctalia msg session lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

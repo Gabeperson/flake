@@ -19,6 +19,9 @@ in
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     home-manager.users.${user} = {
+      home.file.".config/noctalia/palettes/CatpuccinMacchiatoPinkMod.json" = {
+        source = ../config/CatppuccinMacchiatoPinkMod.json;
+      };
       imports = [
         inputs.noctalia.homeModules.default
       ];
@@ -38,10 +41,10 @@ in
             concave_edge_corners = false;
             start = [
               "wallpaper"
+              "workspaces"
               "cpu"
               "ram"
               "temp"
-              "workspaces"
             ];
             center = [ "clock" ];
             end = [
@@ -57,6 +60,44 @@ in
               "control-center"
               "session"
             ];
+          };
+          wallpaper = {
+            directory_dark = "/home/${user}/Wallpapers/backstage";
+            directory_light = "/home/${user}/Wallpapers/stage";
+            automation = {
+              enabled = true;
+              interval_seconds = 1800;
+              order = "random";
+              recursive = "true";
+            };
+          };
+          idle = {
+            pre_action_fade_seconds = 30.0;
+            behavior_order = [
+              "lock"
+              "screen-off"
+              "suspend"
+            ];
+            behavior = {
+              lock = {
+                timeout = 600;
+                action = "lock";
+                enabled = true;
+              };
+              screen-of = {
+                timeout = 660;
+                action = "screen_off";
+                enabled = true;
+              };
+              suspend = {
+                timeout = 900;
+                action = "lock_and_suspend";
+              };
+            };
+          };
+          theme = {
+            source = "custom";
+            custom_palette = "CatppuccinMacchiatoPinkMod";
           };
         };
       };

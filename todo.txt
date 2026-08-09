@@ -1,6 +1,0 @@
-secrets - sops nix?
-direnv - direnv nixos
-rust,python,nodejs
-vscode
-split to server,lenovo,gram,etc.
-wallpaper

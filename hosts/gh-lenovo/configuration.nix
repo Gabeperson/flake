@@ -51,10 +51,11 @@
   features.awww.enable = false;
   features.swaync.enable = false;
   features.syncthing.enable = true;
+  features.kanshi.enable = true;
 
   features.wl-clipboard.enable = true;
 
-  features.gamedev.enable = true;
+  # features.gamedev.enable = true;
 
   features.slack.enable = true;
   features.zoom.enable = true;

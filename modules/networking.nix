@@ -7,7 +7,7 @@ in {
     enable = lib.mkEnableOption "Networking";
     allowedTCPPorts = lib.mkOption {
       type = lib.types.listOf lib.types.int;
-      default = [];
+      default = [ 8080 ];
     };
     allowedUDPPorts = lib.mkOption {
       type = lib.types.listOf lib.types.int;

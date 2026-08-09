@@ -48,6 +48,7 @@
     ./awww.nix
     ./swaync.nix
     ./wl-clipboard.nix
+    ./kanshi.nix
 
     ./gamedev.nix
 
