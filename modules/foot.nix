@@ -25,7 +25,7 @@ in
           };
           colors-dark = {
             background = "000000";
-            alpha = "0.55";
+            alpha = "0.75";
           };
         };
       };

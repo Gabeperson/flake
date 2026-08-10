@@ -42,6 +42,8 @@
     initialPassword = "password";
   };
 
+  security.polkit.enable = true;
+
   nix = {
     settings.auto-optimise-store = true;
   };
