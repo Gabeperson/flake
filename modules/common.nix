@@ -1,4 +1,4 @@
-{pkgs, user, ...}:
+{ pkgs, user, ... }:
 {
   time.timeZone = "America/Vancouver";
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -31,7 +31,10 @@
     pkgs.lm_sensors
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   services.gnome.gnome-keyring.enable = true;
@@ -43,6 +46,19 @@
   };
 
   security.polkit.enable = true;
+  programs.dconf = {
+    enable = true;
+    profiles.user.databases = [
+      {
+        settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+
+        };
+      }
+    ];
+  };
 
   nix = {
     settings.auto-optimise-store = true;
