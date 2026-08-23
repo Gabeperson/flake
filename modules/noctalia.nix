@@ -64,12 +64,13 @@ in
           wallpaper = {
             directory_dark = "/home/${user}/Wallpapers/backstage";
             directory_light = "/home/${user}/Wallpapers/stage";
-            automation = {
-              enabled = true;
-              interval_seconds = 1800;
-              order = "random";
-              recursive = "true";
-            };
+            # automation = {
+            #   enabled = true;
+            #   interval_seconds = 1800;
+            #   order = "random";
+            #   recursive = "true";
+            # };
+            transition = [];
           };
           idle = {
             pre_action_fade_seconds = 30.0;

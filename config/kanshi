@@ -1,5 +1,7 @@
 output "eDP-1" alias $laptop
 output "Dell Inc. DELL U2419H FQLSSS2" alias $h_main
+output "LG Electronics LG ULTRAGEAR 508BNKP0D165" alias $LG
+output "ASUSTek COMPUTER INC ASUS VP247 JALMTF085929" alias $ASUS
 
 profile undocked {
 	output $laptop enable
@@ -12,4 +14,19 @@ profile h-docked-single {
 profile h-docked-double {
 	output $laptop enable position 0,0
 	output $h_main enable position 1920,0
+}
+
+profile r-docked-double {
+	output $LG enable position 1920,0
+	output $ASUS enable position 0,0
+}
+
+profile r-docked-single {
+	output $LG enable position 0,0
+}
+
+profile r-docked-triple {
+	output $LG enable position 1920,0
+	output $ASUS enable position 0,0
+	output $laptop enable position 0,1080
 }

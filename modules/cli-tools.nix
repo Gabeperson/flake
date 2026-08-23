@@ -26,6 +26,7 @@ in {
       valgrind
       htop
       btop-cuda
+      watchexec
     ];
   };
 }
