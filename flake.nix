@@ -50,6 +50,9 @@
         gh-lenovo = mkHost {
           host = "gh-lenovo";
         };
+        gh-gram = mkHost {
+          host = "gh-gram";
+        };
       };
     };
 }
