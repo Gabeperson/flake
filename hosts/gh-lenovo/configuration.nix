@@ -1,15 +1,21 @@
 # { config, pkgs, user, host, ... }:
-{ self, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      (self + /modules)
-    ];
+  self,
+  inputs,
+  lib,
+  ...
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
+    (self + /modules)
+  ];
+
 
   features.bibata.enable = true;
   features.bluetooth.enable = true;
-  features.bootloader = "grub";
+  features.bootloader = "limine";
+  features.secureboot = false;
   features.chromium.enable = false;
   features.cli-tools.enable = true;
   features.fcitx.enable = true;
@@ -62,11 +68,12 @@
   features.obs.enable = true;
   features.libreoffice.enable = true;
 
-
   # Digicert root CA for Uni wifi
   environment.etc."custom-certs/DigiCert.crt" = {
     source = self + /certs/DigiCertGlobalRootCA.crt;
   };
+
+  services.flatpak.enable = true;
 
   # boot.kernelParams = [
   #   "pcie_aspm=off"
@@ -90,4 +97,6 @@
   #     ConditionPathExists="/proc/driver/nvidia/suspend";
   #   };
   # };
+  #
+
 }

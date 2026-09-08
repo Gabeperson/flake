@@ -4,9 +4,10 @@ let
   cfg = config.features;
 in {
   options.features.bootloader = lib.mkOption {
-    type = lib.types.enum [ "systemd-boot" "grub" ];
+    type = lib.types.enum [ "systemd-boot" "grub" "limine" ];
     description = "Which bootloader to use";
   };
+  options.features.secureboot = lib.mkEnableOption "Secure boot";
   config = lib.mkMerge [
     {
       boot.loader.efi.efiSysMountPoint = "/boot";
@@ -35,6 +36,20 @@ in {
             menuentry "UEFI/BIOS Settings" {
               fwsetup
             }
+          '';
+        };
+      };
+    })
+    (lib.mkIf (cfg.bootloader == "limine") {
+      environment.systemPackages = [pkgs.sbctl];
+      boot.loader = {
+        limine = {
+          enable = true;
+          secureBoot.enable = cfg.secureboot;
+          extraEntries = ''
+            /Windows    
+              protocol: efi
+              path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
           '';
         };
       };

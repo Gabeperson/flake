@@ -93,6 +93,12 @@ in
                 "uwu-colors"
               ];
             }
+            {
+              name = "y86";
+              scope = "scope.y86";
+              file-types = ["y86"];
+              comment-tokens = ["//"];
+            }
           ]
           ++ (lib.lists.forEach [ "javascript" "typescript" "tsx" "jsx" ] (name: {
             inherit name;

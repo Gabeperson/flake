@@ -37,7 +37,7 @@
           user ? "gabeperson",
         }:
         lib.nixosSystem {
-          specialArgs = { inherit inputs self host user; };
+          specialArgs = { inherit inputs self host user lib; };
           modules = [
             inputs.home-manager.nixosModules.home-manager
             ./hosts/common.nix
