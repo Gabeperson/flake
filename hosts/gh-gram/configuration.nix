@@ -40,6 +40,7 @@
   features.foot.enable = true;
   features.r2modman.enable = false;
   features.syncthing.enable = true;
+  features.distrobox.enable = true;
 
   features.niri.enable = true;
   features.ashell.enable = false;

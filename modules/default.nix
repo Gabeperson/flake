@@ -36,6 +36,7 @@
     ./foot.nix
     ./r2modman.nix
     ./syncthing.nix
+    ./distrobox.nix
 
     ./niri.nix
     ./ashell.nix
