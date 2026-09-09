@@ -27,6 +27,7 @@ in {
       htop
       btop-cuda
       watchexec
+      brightnessctl
     ];
   };
 }
