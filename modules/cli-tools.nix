@@ -28,6 +28,9 @@ in {
       btop-cuda
       watchexec
       brightnessctl
+
+      traceroute
+      dig
     ];
   };
 }
