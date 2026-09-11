@@ -29,6 +29,7 @@ in
           pkgs.nil
           pkgs.ruff
           pkgs.lua-language-server
+          pkgs.tombi
         ];
         defaultEditor = true;
         settings = {

@@ -37,6 +37,8 @@
     ./r2modman.nix
     ./syncthing.nix
     ./distrobox.nix
+    ./swaylock.nix
+    ./go.nix
 
     ./niri.nix
     ./ashell.nix
