@@ -8,12 +8,44 @@ button-label-weight = "normal"
 button-label-padding = 0.7
 button-icon-padding = 0.7
 
+[osd]
+position = "top-right"
+
+
+
 [[bar.layout]]
 monitor = "*"
 left = []
 center = []
 right = []
 
-[osd]
-position = "top-right"
+# Custom icon sources
+# from https://wayle.app/guide/custom-icons
+# tb-/tbf- https://tabler.io/icons
+# md- https://fonts.google.com/icons
+# ld- https://lucide.dev/icons/
+
+[modules.niri-workspaces]
+[modules.cpu]
+[modules.ram]
+[modules.netstat]
+[modules.storage]
+
+[modules.clock]
+[modules.world-clock]
+[modules.dashboard]
+[modules.idle-inhibit]
+
+[modules.media]
+[modules.cava]
+[modules.keyboard-input]
+[modules.systray]
+[modules.notifications]
+[modules.network]
+[modules.bluetooth]
+[modules.volume]
+[modules.microphone]
+[modules.battery]
+[modules.brightness]
+[modules.power]
 
