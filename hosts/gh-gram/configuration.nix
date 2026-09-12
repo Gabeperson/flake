@@ -42,6 +42,7 @@
   features.syncthing.enable = true;
   features.distrobox.enable = true;
   features.go.enable = true;
+  features.racket.enable = true;
 
   features.swaylock.enable = false;
   features.wayle.enable = false;

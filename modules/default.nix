@@ -39,6 +39,7 @@
     ./distrobox.nix
     ./swaylock.nix
     ./go.nix
+    ./racket.nix
 
     ./niri.nix
     ./ashell.nix
