@@ -8,16 +8,26 @@ button-label-weight = "normal"
 button-label-padding = 0.7
 button-icon-padding = 0.7
 
-[osd]
-position = "top-right"
-
-
-
 [[bar.layout]]
 monitor = "*"
-left = []
-center = []
-right = []
+left = ["dashboard", "niri-workspaces", "cpu", "ram", "netstat", "storage"]
+center = ["clock",
+#"world-clock",
+"idle-inhibit"]
+right = [
+  "media",
+  "cava",
+  "keyboard-input",
+  "systray",
+  "notifications",
+  "network",
+  "bluetooth",
+  "volume",
+  "microphone",
+  "battery",
+  "brightness",
+  "power"
+]
 
 # Custom icon sources
 # from https://wayle.app/guide/custom-icons
@@ -25,27 +35,49 @@ right = []
 # md- https://fonts.google.com/icons
 # ld- https://lucide.dev/icons/
 
-[modules.niri-workspaces]
+[osd]
+# position = "top-right"
+
 [modules.cpu]
+thresholds = [
+  { above = 70, icon-color = "status-warning", label-color = "status-warning" },
+  { above = 90, icon-color = "status-error", label-color = "status-error" },
+]
+
 [modules.ram]
-[modules.netstat]
-[modules.storage]
+thresholds = [
+  { above = 70, icon-color = "status-warning", label-color = "status-warning" },
+  { above = 90, icon-color = "status-error", label-color = "status-error" },
+]
 
 [modules.clock]
+format = "%a, %b %d, %Y, %I:%M:%S %P"
+
 [modules.world-clock]
-[modules.dashboard]
+format = "{{tz('Asia/Seoul', '%H:%M %Z')}}"
+
 [modules.idle-inhibit]
+format = "{{state}} ({{remaining}})"
 
-[modules.media]
-[modules.cava]
-[modules.keyboard-input]
-[modules.systray]
-[modules.notifications]
-[modules.network]
-[modules.bluetooth]
-[modules.volume]
-[modules.microphone]
 [modules.battery]
-[modules.brightness]
-[modules.power]
+thresholds = [
+  { below = 40, icon-color = "status-warning", label-color = "status-warning" },
+  { below = 20, icon-color = "status-error", label-color = "status-error" },
+]
 
+# [modules.brightness]
+# [modules.power]
+# [modules.dashboard]
+# [modules.niri-workspaces]
+# [modules.media]
+# [modules.cava]
+# [modules.keyboard-input]
+# [modules.systray]
+# [modules.notifications]
+# [modules.network]
+
+# [modules.bluetooth]
+# [modules.volume]
+# [modules.microphone]
+# [modules.netstat]
+# [modules.storage]

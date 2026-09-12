@@ -19,12 +19,10 @@ in
       services.wayle = {
         enable = true;
         autoInstallDependencies = true;
-        settings = {
-          
-        };
+      };
+      home.file.".config/wayle/config.toml" = {
+        source = ../config/wayle.toml;
       };
     };
   };
 }
-
-
