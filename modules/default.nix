@@ -40,6 +40,7 @@
     ./swaylock.nix
     ./go.nix
     ./racket.nix
+    ./cpp.nix
 
     ./niri.nix
     ./ashell.nix

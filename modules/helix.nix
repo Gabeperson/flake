@@ -30,6 +30,7 @@ in
           pkgs.ruff
           pkgs.lua-language-server
           pkgs.tombi
+          pkgs.glsl_analyzer
         ];
         defaultEditor = true;
         settings = {
