@@ -31,6 +31,7 @@ in
           pkgs.lua-language-server
           pkgs.tombi
           pkgs.glsl_analyzer
+          pkgs.jdt-language-server
         ];
         defaultEditor = true;
         settings = {

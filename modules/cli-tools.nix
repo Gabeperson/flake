@@ -29,6 +29,7 @@ in {
       watchexec
       brightnessctl
       gdb
+      fastfetch
 
       traceroute
       dig
