@@ -49,6 +49,7 @@
   features.go.enable = true;
   features.racket.enable = true;
   features.cpp.enable = true;
+  features.meld.enable = true;
 
   features.swaylock.enable = false;
   features.wayle.enable = false;

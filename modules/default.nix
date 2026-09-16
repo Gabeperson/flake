@@ -41,6 +41,7 @@
     ./go.nix
     ./racket.nix
     ./cpp.nix
+    ./meld.nix
 
     ./niri.nix
     ./ashell.nix
