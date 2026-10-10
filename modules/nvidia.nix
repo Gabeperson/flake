@@ -27,27 +27,30 @@ in {
     };
     hardware.graphics.enable = true;
     hardware.graphics = {
+      enable32Bit = true;
       extraPackages = [
         pkgs.nvidia-vaapi-driver
       ];
     };
     hardware.nvidia.powerManagement.enable = true;
+    # hardware.nvidia.powerManagement.enable = false;
+    hardware.nvidia.powerManagement.finegrained = false;
     services.xserver.videoDrivers = ["nvidia"];
 
-    boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_580 ];
     hardware.nvidia = {
-      open = false;
+      open = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-      prime = {
-        inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
-        # sync.enable = true;
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-        reverseSync.enable = false;
-      };
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # prime = {
+      #   inherit (cfg) intelBusId nvidiaBusId amdgpuBusId;
+      #   # sync.enable = true;
+      #   offload = {
+      #     enable = true;
+      #     enableOffloadCmd = true;
+      #   };
+      #   reverseSync.enable = false;
+      # };
     };
   };
 }

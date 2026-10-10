@@ -53,6 +53,9 @@
         gh-gram = mkHost {
           host = "gh-gram";
         };
+        gh-desktop = mkHost {
+          host = "gh-desktop";
+        };
       };
     };
 }

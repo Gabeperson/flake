@@ -32,6 +32,9 @@ in
           pkgs.tombi
           pkgs.glsl_analyzer
           pkgs.jdt-language-server
+          pkgs.typescript-language-server
+          pkgs.gopls
+          pkgs.neocmakelsp
         ];
         defaultEditor = true;
         settings = {
