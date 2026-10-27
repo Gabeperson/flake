@@ -20,6 +20,7 @@ in
       clang-tools
       gnumake
       cmake
+      libclang
     ];
   };
 }

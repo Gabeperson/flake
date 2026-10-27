@@ -51,8 +51,8 @@
   features.cpp.enable = true;
   features.meld.enable = true;
 
-  features.swaylock.enable = false;
-  features.wayle.enable = false;
+  # features.swaylock.enable = true;
+  # features.wayle.enable = true;
   features.noctalia.enable = true;
 
   features.niri.enable = true;
@@ -72,7 +72,7 @@
 
   features.slack.enable = true;
   features.zoom.enable = true;
-  features.obs.enable = false;
+  features.obs.enable = true;
   features.libreoffice.enable = true;
 
   # Digicert root CA for Uni wifi

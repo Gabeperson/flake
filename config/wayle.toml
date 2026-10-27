@@ -1,5 +1,5 @@
 [bar]
-scale = 0.7
+scale = 0.6
 background-opacity = 90
 # none,sm,md,lg,full
 rounding = "md"
@@ -10,24 +10,13 @@ button-icon-padding = 0.7
 
 [[bar.layout]]
 monitor = "*"
-left = ["dashboard", "niri-workspaces", "cpu", "ram", "netstat", "storage"]
-center = ["clock",
-#"world-clock",
-"idle-inhibit"]
-right = [
-  "media",
-  "cava",
-  "keyboard-input",
-  "systray",
-  "notifications",
-  "network",
-  "bluetooth",
-  "volume",
-  "microphone",
-  "battery",
-  "brightness",
-  "power"
+left = ["dashboard", "niri-workspaces", "cpu", "ram", "netstat", "storage", "media", "cava"]
+center = [
+  "clock",
+  # "world-clock",
+  "idle-inhibit"
 ]
+right = ["keyboard-input", "systray", "notifications", "network", "bluetooth", "volume", "microphone", "battery", "brightness", "power"]
 
 # Custom icon sources
 # from https://wayle.app/guide/custom-icons
