@@ -30,6 +30,7 @@ in {
       brightnessctl
       gdb
       fastfetch
+      samply
 
       traceroute
       dig
