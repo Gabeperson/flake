@@ -42,6 +42,7 @@
     ./racket.nix
     ./cpp.nix
     ./meld.nix
+    ./direnv.nix
 
     ./niri.nix
     ./ashell.nix

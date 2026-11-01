@@ -50,6 +50,7 @@
   features.racket.enable = true;
   features.cpp.enable = true;
   features.meld.enable = true;
+  features.direnv.enable = true;
 
   # features.swaylock.enable = true;
   # features.wayle.enable = true;
