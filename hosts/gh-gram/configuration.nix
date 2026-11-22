@@ -68,7 +68,7 @@
 
   features.slack.enable = true;
   features.zoom.enable = true;
-  features.obs.enable = false;
+  features.obs.enable = true;
   features.libreoffice.enable = true;
 
 
