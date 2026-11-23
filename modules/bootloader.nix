@@ -49,6 +49,7 @@ in {
             enable = cfg.secureboot;
             autoEnrollKeys.enable = true;
           };
+          # secureBoot.enable = cfg.secureboot;
           extraEntries = ''
             /Windows    
               protocol: efi

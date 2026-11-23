@@ -9,7 +9,9 @@
 
   features.bibata.enable = true;
   features.bluetooth.enable = true;
-  features.bootloader = "grub";
+  # features.bootloader = "grub";
+  features.secureboot = true;
+  features.bootloader = "limine";
   features.chromium.enable = false;
   features.cli-tools.enable = true;
   features.fcitx.enable = true;
