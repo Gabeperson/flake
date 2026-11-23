@@ -9,7 +9,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
       pkgs.godot_4_7
-      pkgs.aseprite
+      # pkgs.aseprite
     ];
   };
 }

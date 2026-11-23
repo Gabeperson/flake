@@ -43,6 +43,8 @@
     ./cpp.nix
     ./meld.nix
     ./direnv.nix
+    ./kdenlive.nix
+    ./davinci-resolve.nix
 
     ./niri.nix
     ./ashell.nix

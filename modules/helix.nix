@@ -35,6 +35,7 @@ in
           pkgs.typescript-language-server
           pkgs.gopls
           pkgs.neocmakelsp
+          pkgs.ty
         ];
         defaultEditor = true;
         settings = {

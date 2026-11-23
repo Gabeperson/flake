@@ -15,7 +15,7 @@
   features.bibata.enable = true;
   features.bluetooth.enable = true;
   features.bootloader = "limine";
-  features.secureboot = false;
+  features.secureboot = true;
   features.chromium.enable = false;
   features.cli-tools.enable = true;
   features.fcitx.enable = true;
@@ -34,10 +34,11 @@
   features.zellij.enable = false;
   features.java.enable = true;
   features.minecraft.enable = true;
+  # features.nix-ld.enable = true;
   features.fish.enable = true;
   features.gnome.enable = true;
   features.rust.enable = true;
-  features.flameshot.enable = false;
+  # features.flameshot.enable = true;
   features.eyedropper.enable = false;
   features.firejail.enable = false;
   features.vm.enable = false;
@@ -51,6 +52,8 @@
   features.cpp.enable = true;
   features.meld.enable = true;
   features.direnv.enable = true;
+  features.kdenlive.enable = true;
+  # features.davinci-resolve.enable = true;
 
   # features.swaylock.enable = true;
   # features.wayle.enable = true;
@@ -69,7 +72,7 @@
 
   features.wl-clipboard.enable = true;
 
-  # features.gamedev.enable = true;
+  features.gamedev.enable = true;
 
   features.slack.enable = true;
   features.zoom.enable = true;

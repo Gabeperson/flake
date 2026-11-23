@@ -45,7 +45,10 @@ in {
       boot.loader = {
         limine = {
           enable = true;
-          secureBoot.enable = cfg.secureboot;
+          secureBoot = {
+            enable = cfg.secureboot;
+            autoEnrollKeys.enable = true;
+          };
           extraEntries = ''
             /Windows    
               protocol: efi
