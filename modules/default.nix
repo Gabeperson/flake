@@ -45,6 +45,7 @@
     ./direnv.nix
     ./kdenlive.nix
     ./davinci-resolve.nix
+    ./wireshark.nix
 
     ./niri.nix
     ./ashell.nix
